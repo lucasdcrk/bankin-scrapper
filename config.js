@@ -17,7 +17,7 @@ const headers = {
 };
 
 const http = {
-    port: process.env.HTTP_PORT || 3000,
+    port: process.env.HTTP_PORT || process.env.PORT || 3000,
     auth_required: process.env.HTTP_AUTH || true,
     auth_username: process.env.HTTP_USERNAME || 'bankin',
     auth_password: process.env.HTTP_PASSWORD || 'bankin'
