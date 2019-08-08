@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const rp = require('request-promise');
 const NodeCache = require('node-cache');
 const config = require('./config');
 const auth = require('./auth');
 const cache = new NodeCache({ stdTTL: 60*60*12, checkperiod: 60*60 });
+
+app.use(cors());
+app.options('*', cors());
 
 let requires_auth = function (req, res, next) {
     const http_auth = { login: config.http.auth_username, password: config.http.auth_password };
