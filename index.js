@@ -25,7 +25,7 @@ auth.get_token.then(function (token) {
             let json = JSON.parse(html);
             let accounts = json.resources;
 
-            fs.writeFile('accounts.json', accounts, 'utf8', function (err) {
+            fs.writeFile('accounts.json', JSON.stringify(accounts), 'utf8', function (err) {
                 if (err) {
                     console.log('An error occured while writing JSON Object to File.');
                     return console.log(err);

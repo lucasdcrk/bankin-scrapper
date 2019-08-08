@@ -16,18 +16,11 @@ const headers = {
     bankin_device: process.env.BANKIN_DEVICE || '0e0f7832-03a2-4ff6-8b8d-74f36be53df3'
 };
 
-const http = {
-    port: process.env.HTTP_PORT || process.env.PORT || 3000,
-    auth_required: process.env.HTTP_AUTH || true,
-    auth_username: process.env.HTTP_USERNAME || 'bankin',
-    auth_password: process.env.HTTP_PASSWORD || 'bankin'
-};
 
 const config = {
     credentials,
     client,
-    headers,
-    http
+    headers
 };
 
 module.exports = config;
